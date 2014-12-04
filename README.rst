@@ -1,6 +1,4 @@
-===============================
 trove-specs
-===============================
 
 OpenStack Database Service (Trove) Specifications
 
