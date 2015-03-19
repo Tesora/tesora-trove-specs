@@ -1,6 +1,4 @@
-===============================
-tesora-trove-specs 
-===============================
+trove-specs
 
 OpenStack Database Service (Trove) Specifications
 
