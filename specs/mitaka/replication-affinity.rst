@@ -86,12 +86,6 @@ anti-affinity and there are not enough available hypervisors.  There may be
 other cases where Nova is unable to create the replica (affinity chosen, but
 different AZ's); in these cases the replica will likely fail as well.
 
-In order to easier create a replication set with affinity (or anti-affinity),
-the behaviour for create will also be changed to allow 'None' as the value for
---replica_of, if --replica_count is specified.  This will have the effect of
-creating the 'master' node first before creating the replicas.  It will also
-mean that taking a backup is unneccessary, speeding up the entire process.
-
 The Trove show command will also be modified to show the 'locality' value (i.e.
 the server_group policy), if it exists.
 
@@ -218,14 +212,8 @@ values: affinity and anti-affinity.  The command would look like:
     trove create my_instance 7 --size 1 --locality affinity
 
 Replicas can then be created in the usual fashion, with all following the
-locality setting of the master node.  This flag will also work with setting up
-an initial replication network:
-
-.. code-block:: bash
-
-    trove create my_repl_set 7 --size 1 --locality anti-affinity --replica_count 3
-
-If adding replicas to an existing set, an exception will be thrown as this flag
+locality setting of the master node.  If adding replicas to an existing set,
+an exception will be thrown if --locality is specified, as this flag
 cannot be changed once it has been associated with an instance.  For example,
 the following command would fail:
 
