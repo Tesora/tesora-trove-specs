@@ -257,6 +257,12 @@ provide some mechanism for delivering all of the deb/rpm packages
 required to update an instance.
 
 
+Dashboard Impact (UX)
+=====================
+
+TBD
+
+
 Implementation
 ==============
 

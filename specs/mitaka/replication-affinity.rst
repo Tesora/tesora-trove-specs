@@ -274,6 +274,16 @@ Alternatives
 
 None
 
+
+Dashboard Impact (UX)
+=====================
+
+The panel for creating an instance should have a new field 'locality' that
+contains a dropdown with 'None', 'affinity' and 'anti-affinity' in it
+(defaulting to 'None').  The value selected will need to be passed along
+to the python create command (setting locality=<field_value>).
+
+
 Implementation
 ==============
 
